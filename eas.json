@@ -1,0 +1,44 @@
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true,
+      "ios": {
+        "developmentClient": true,
+        "simulator": true
+      }
+    },
+    "preview4": {
+      "distribution": "internal",
+      "ios": {
+        "distribution": "internal"
+      }
+    },
+    "production": {
+      "ios": {}
+    },
+    "app-bundle": {
+      "android": {
+        "buildType": "app-bundle",
+        "image": "latest"
+      }
+    },
+    "apk": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
