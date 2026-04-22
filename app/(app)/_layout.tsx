@@ -87,7 +87,7 @@ export default function AppLayout() {
         <Stack.Screen 
           name="index" 
           options={{
-            title: 'Orar con Jesús',
+            title: 'JUMM',
             headerShown: true,
             headerRight: () => (
               <TouchableOpacity 

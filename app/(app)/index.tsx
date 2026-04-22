@@ -52,9 +52,9 @@ export default function HomePage() {
 
           {/* Menú desplegable de Noticias */}
           <View style={styles.dropdownContainer}>
-            <TouchableOpacity style={styles.menuItem} onPress={toggleNewsDropdown}>
+            <TouchableOpacity style={[styles.menuItem, styles.menuItemRow]} onPress={toggleNewsDropdown}>
               <MaterialCommunityIcons name="newspaper" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Noticias</Text>
+              <Text style={[styles.menuText, styles.menuTextRow]}>Noticias</Text>
               <MaterialCommunityIcons 
                 name={newsDropdownOpen ? "chevron-up" : "chevron-down"} 
                 size={24} 
@@ -183,9 +183,9 @@ export default function HomePage() {
 
           {/* Menú desplegable de Liturgia de las Horas */}
           <View style={styles.dropdownContainer}>
-            <TouchableOpacity style={styles.menuItem} onPress={toggleLiturgyDropdown}>
+            <TouchableOpacity style={[styles.menuItem, styles.menuItemRow]} onPress={toggleLiturgyDropdown}>
               <MaterialCommunityIcons name="clock" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Liturgia de las Horas</Text>
+              <Text style={[styles.menuText, styles.menuTextRow]}>Liturgia de las Horas</Text>
               <MaterialCommunityIcons 
                 name={liturgyDropdownOpen ? "chevron-up" : "chevron-down"} 
                 size={24} 
@@ -258,9 +258,9 @@ export default function HomePage() {
 
           {/* Menú desplegable de Devociones */}
           <View style={styles.dropdownContainer}>
-            <TouchableOpacity style={styles.menuItem} onPress={toggleDevotionsDropdown}>
+            <TouchableOpacity style={[styles.menuItem, styles.menuItemRow]} onPress={toggleDevotionsDropdown}>
               <MaterialCommunityIcons name="heart" size={32} color={Colors.primary} />
-              <Text style={styles.menuText}>Devociones</Text>
+              <Text style={[styles.menuText, styles.menuTextRow]}>Devociones</Text>
               <MaterialCommunityIcons 
                 name={devotionsDropdownOpen ? "chevron-up" : "chevron-down"} 
                 size={24} 
@@ -393,17 +393,22 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 16,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   contentContainer: {
     paddingBottom: 80, // Espacio para el botón de búsqueda
   },
   menuItem: {
-    flexDirection: 'row',
+    width: '48%',
+    aspectRatio: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
-    padding: 20,
-    borderRadius: 10,
-    marginBottom: 15,
+    padding: 14,
+    borderRadius: 6,
+    marginBottom: 12,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -414,9 +419,25 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   menuText: {
-    fontSize: 20,
-    marginLeft: 15,
+    fontSize: 15,
+    marginTop: 10,
     color: Colors.secondary,
+    textAlign: 'center',
+  },
+  menuItemRow: {
+    width: '100%',
+    height: 78,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+    paddingVertical: 0,
+  },
+  menuTextRow: {
+    fontSize: 20,
+    marginTop: 0,
+    marginLeft: 15,
+    textAlign: 'left',
     flex: 1,
   },
   searchButton: {
@@ -488,6 +509,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   dropdownContainer: {
+    width: '100%',
     marginBottom: 15,
   },
   dropdownContent: {
