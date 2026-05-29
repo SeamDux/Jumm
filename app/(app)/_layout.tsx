@@ -1,17 +1,13 @@
-import { Stack, useNavigation, usePathname, router } from 'expo-router';
+import { Stack, useNavigation, usePathname } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { BackHandler, Platform, View, Text, LogBox, TouchableOpacity } from 'react-native';
+import { BackHandler, Platform, View, Text, LogBox } from 'react-native';
 import Colors from '../../constants/Colors';
-import { MaterialIcons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-// Ignorar advertencias específicas si es necesario
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
-  'Sending `onAnimatedValueUpdate` with no listeners registered.'
+  'Sending `onAnimatedValueUpdate` with no listeners registered.',
 ]);
 
-// Error Boundary Component
 function ErrorScreen({ error }: { error: Error }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: Colors.background }}>
@@ -26,7 +22,6 @@ export default function AppLayout() {
   const pathname = usePathname();
   const [error, setError] = useState<Error | null>(null);
 
-  // Manejar el botón de retroceso en Android
   useEffect(() => {
     if (Platform.OS === 'android') {
       const backHandler = BackHandler.addEventListener(
@@ -50,7 +45,6 @@ export default function AppLayout() {
     }
   }, [navigation]);
 
-  // Reiniciar el error cuando cambia la ruta
   useEffect(() => {
     setError(null);
   }, [pathname]);
@@ -74,7 +68,7 @@ export default function AppLayout() {
     },
     animation: Platform.select({
       ios: 'default',
-      android: 'slide_from_right'
+      android: 'slide_from_right',
     }) as 'default' | 'slide_from_right',
     animationDuration: 200,
     gestureEnabled: Platform.OS === 'ios',
@@ -84,34 +78,10 @@ export default function AppLayout() {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.background }}>
       <Stack screenOptions={screenOptions}>
-        <Stack.Screen 
-          name="index" 
+        <Stack.Screen
+          name="index"
           options={{
             title: 'JUMM',
-            headerShown: true,
-            headerRight: () => (
-              <TouchableOpacity 
-                onPress={() => router.push('/(app)/creditos')}
-                style={{
-                  marginRight: 16,
-                  padding: 4,
-                }}
-              >
-                <MaterialCommunityIcons name="star" size={26} color="white" />
-              </TouchableOpacity>
-            ),
-          }} 
-        />
-        <Stack.Screen 
-          name="acerca-de" 
-          options={{
-            title: 'Acerca de',
-            headerShown: true,
-          }} 
-        />
-        <Stack.Screen 
-          name="[id]" 
-          options={{
             headerShown: true,
           }}
         />
