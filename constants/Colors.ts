@@ -16,6 +16,7 @@ export const Colors = {
   lightGray: '#dcdde1',
   success: '#44bd32',
   error: '#c23616',
+  liturgicalRed: '#8B0000',
   card: '#ffffff',
   light: {
     text: '#444444',

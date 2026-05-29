@@ -74,6 +74,7 @@ export default function HomePage() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>JUMM</Text>
+        <Text style={styles.subtitle}>Oraciones y devociones</Text>
 
         <View style={styles.grid}>
           {menuItems.map((item) => (
@@ -103,6 +104,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '700',
     color: Colors.primary,
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: Colors.secondary,
     textAlign: 'center',
     marginBottom: 20,
   },

@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 import { useColorScheme, SafeAreaView, View, Text } from 'react-native';
 import Colors from '../constants/Colors';
-import * as Font from 'expo-font';
+import { fontAssets } from '../constants/Fonts';
 
 // Prevenir que la pantalla de inicio se oculte automáticamente
 SplashScreen.preventAutoHideAsync();
@@ -29,20 +29,12 @@ function ErrorFallback({ error }: ErrorFallbackProps) {
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [error, setError] = useState<Error | null>(null);
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+  const [loaded] = useFonts(fontAssets);
 
   useEffect(() => {
     async function prepare() {
       try {
-        // Asegurar que las fuentes estén cargadas
-        await Font.loadAsync({
-          SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-        });
-
         if (loaded) {
-          // Pequeño retraso para asegurar que todo esté listo
           await new Promise(resolve => setTimeout(resolve, 500));
           await SplashScreen.hideAsync();
         }
