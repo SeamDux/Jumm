@@ -11,14 +11,14 @@ module.exports = {
         projectId: 'YOUR_NEW_EXPO_PROJECT_ID'
       }
     },
-    name: 'Nueva App Religiosa',
-    slug: 'nuevaappreligiosa',
+    name: 'JUMM',
+    slug: 'jumm',
     version: '1.0.2',
     orientation: 'portrait',
-    icon: './assets/images/android-chrome-512x512.png',
+    icon: './assets/images/8581abf4.png',
     userInterfaceStyle: 'light',
     splash: {
-      image: 'assets/images/android/playstore-icon.png',
+      image: 'assets/images/android/LOGO JUMM APP.jpg',
       resizeMode: 'contain',
       backgroundColor: '#ffffff'
     },
