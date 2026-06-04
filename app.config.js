@@ -1,14 +1,14 @@
 module.exports = {
   expo: {
     updates: {
-      url: "https://u.expo.dev/YOUR_NEW_EXPO_PROJECT_ID",
+      url: "https://u.expo.dev/99274714-b5df-4ace-96f0-d57ecc87dfd7",
       fallbackToCacheTimeout: 0
     },
     // En bare workflow hay que fijar la versión; mantenerla igual que version al publicar
     runtimeVersion: "1.0.2",
     extra: {
       eas: {
-        projectId: 'YOUR_NEW_EXPO_PROJECT_ID'
+        projectId: "99274714-b5df-4ace-96f0-d57ecc87dfd7"
       }
     },
     name: 'JUMM',
