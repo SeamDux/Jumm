@@ -27,14 +27,14 @@ module.exports = {
     ],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.nuevaappreligiosa.app',
+      bundleIdentifier: 'com.jumm.app',
       buildNumber: "3"
     },
     android: {
-      package: 'com.nuevaappreligiosa.app',
+      package: 'com.jumm.app',
       versionCode: 18,
       adaptiveIcon: {
-        foregroundImage: 'assets/images/android/mipmap-xxxhdpi/ic_launcher.png',
+        foregroundImage: 'assets/images/8581abf4.png',
         backgroundColor: '#ffffff'
       },
       permissions: [],
