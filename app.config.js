@@ -18,7 +18,7 @@ module.exports = {
     icon: './assets/images/8581abf4.png',
     userInterfaceStyle: 'light',
     splash: {
-      image: 'assets/images/android/LOGO JUMM APP.jpg',
+      image: 'assets/images/LOGO JUMM APP.jpg',
       resizeMode: 'contain',
       backgroundColor: '#ffffff'
     },
@@ -86,7 +86,7 @@ module.exports = {
       ],
       './plugins/android-16kb.js'
     ],
-    scheme: 'nuevaappreligiosa',
+    scheme: 'jumm',
     experiments: {
       tsconfigPaths: true
     },
@@ -95,8 +95,8 @@ module.exports = {
         {
           file: "sentry-expo/upload-sourcemaps",
           config: {
-            organization: "nuevaappreligiosa",
-            project: "nuevaappreligiosa"
+            organization: "jumm",
+            project: "jumm"
           }
         }
       ]
