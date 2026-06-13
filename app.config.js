@@ -15,10 +15,10 @@ module.exports = {
     slug: 'jumm',
     version: '1.0.2',
     orientation: 'portrait',
-    icon: './assets/images/8581abf4.png',
+    icon: './assets/images/jumm-icon.png',
     userInterfaceStyle: 'light',
     splash: {
-      image: 'assets/images/LOGO JUMM APP.jpg',
+      image: './assets/images/jumm-icon.png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff'
     },
@@ -34,7 +34,7 @@ module.exports = {
       package: 'com.jumm.app',
       versionCode: 18,
       adaptiveIcon: {
-        foregroundImage: 'assets/images/8581abf4.png',
+        foregroundImage: './assets/images/jumm-icon.png',
         backgroundColor: '#ffffff'
       },
       permissions: [],

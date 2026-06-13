@@ -1,4 +1,4 @@
-package com.nuevaappreligiosa.app
+package com.jumm.app
 
 import android.app.Application
 import android.content.res.Configuration

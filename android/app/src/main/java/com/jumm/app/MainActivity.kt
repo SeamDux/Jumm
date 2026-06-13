@@ -1,4 +1,4 @@
-package com.nuevaappreligiosa.app
+package com.jumm.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
