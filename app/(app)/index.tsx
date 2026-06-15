@@ -67,6 +67,21 @@ const menuItems: MenuItem[] = [
     href: '/(app)/novena-nuestra-senora-encuentro-dios',
     icon: 'account-heart',
   },
+  {
+    title: 'Sagrada Biblia',
+    href: '/(app)/sagrada-biblia',
+    icon: 'book-open-page-variant',
+  },
+  {
+    title: 'Evangelio del día',
+    href: '/(app)/evangelio-del-dia',
+    icon: 'book-open-variant',
+  },
+  {
+    title: 'La Doctrina Cristiana',
+    href: '/(app)/resumen-doctrina',
+    icon: 'book-cross',
+  },
 ];
 
 export default function HomePage() {
