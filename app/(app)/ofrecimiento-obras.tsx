@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
   dropCap: {
     fontFamily: Fonts.bold,
     fontSize: 28,
-    fontWeight: '700',
     color: Colors.liturgicalRed,
     lineHeight: 28,
   },

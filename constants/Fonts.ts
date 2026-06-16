@@ -1,34 +1,23 @@
-import { Platform } from 'react-native';
+import {
+  Lora_400Regular,
+  Lora_400Regular_Italic,
+  Lora_700Bold,
+} from '@expo-google-fonts/lora';
 
-const bundledRegular = 'TimesNewRoman';
-const bundledBold = 'TimesNewRoman-Bold';
-const bundledItalic = 'TimesNewRoman-Italic';
+const bundledRegular = 'Lora_400Regular';
+const bundledBold = 'Lora_700Bold';
+const bundledItalic = 'Lora_400Regular_Italic';
 
 export const Fonts = {
-  regular: Platform.select({
-    ios: 'Times New Roman',
-    android: bundledRegular,
-    web: 'Times New Roman, Times, serif',
-    default: bundledRegular,
-  }) as string,
-  bold: Platform.select({
-    ios: 'Times New Roman',
-    android: bundledBold,
-    web: 'Times New Roman, Times, serif',
-    default: bundledBold,
-  }) as string,
-  italic: Platform.select({
-    ios: 'Times New Roman',
-    android: bundledItalic,
-    web: 'Times New Roman, Times, serif',
-    default: bundledItalic,
-  }) as string,
+  regular: bundledRegular,
+  bold: bundledBold,
+  italic: bundledItalic,
 };
 
 export const fontAssets = {
-  [bundledRegular]: require('../assets/fonts/TimesNewRoman-Regular.ttf'),
-  [bundledBold]: require('../assets/fonts/TimesNewRoman-Bold.ttf'),
-  [bundledItalic]: require('../assets/fonts/TimesNewRoman-Italic.ttf'),
+  [bundledRegular]: Lora_400Regular,
+  [bundledBold]: Lora_700Bold,
+  [bundledItalic]: Lora_400Regular_Italic,
 };
 
 export default Fonts;

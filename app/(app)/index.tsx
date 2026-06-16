@@ -1,6 +1,7 @@
 import { StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
+import Fonts from '../../constants/Fonts';
 import { Link } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { ComponentProps } from 'react';
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   title: {
+    fontFamily: Fonts.bold,
     fontSize: 28,
     fontWeight: '700',
     color: Colors.primary,
@@ -123,6 +125,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   subtitle: {
+    fontFamily: Fonts.regular,
     fontSize: 16,
     color: Colors.secondary,
     textAlign: 'center',
@@ -152,6 +155,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   menuText: {
+    fontFamily: Fonts.regular,
     fontSize: 14,
     marginTop: 10,
     color: Colors.secondary,
