@@ -1,4 +1,11 @@
-import { Linking, StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
+import {
+  FlatList,
+  Linking,
+  StyleSheet,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
@@ -7,6 +14,13 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { ComponentProps } from 'react';
 
 const REINADO_MARIA_REVISTAS_URL = 'https://reinadodemaria.org/categoria/revistas/';
+const ADORACION_EN_VIVO_URL = 'https://www.youtube.com/live/mnOTH_3dprI';
+const AUDIOLIBROS_JUMM_URL =
+  'https://drive.google.com/drive/folders/1c5qsFLI9DjKNf231ca5nuDigXbUYj0jh?usp=sharing';
+
+const HORIZONTAL_PADDING = 16;
+const COLUMN_GAP = 12;
+const ROW_GAP = 12;
 
 type MenuItem = {
   title: string;
@@ -31,6 +45,11 @@ const menuItems: MenuItem[] = [
     title: 'JUMM',
     href: '/(app)/jumm',
     icon: 'music-note',
+  },
+  {
+    title: 'Audiolibros JUMM',
+    externalUrl: AUDIOLIBROS_JUMM_URL,
+    icon: 'headphones',
   },
   {
     title: 'YouTube',
@@ -74,7 +93,7 @@ const menuItems: MenuItem[] = [
   },
   {
     title: 'Adoración al Santísimo en vivo',
-    href: '/(app)/adoracion-santisimo-en-vivo',
+    externalUrl: ADORACION_EN_VIVO_URL,
     icon: 'video-wireless',
   },
   {
@@ -114,43 +133,56 @@ const menuItems: MenuItem[] = [
   },
 ];
 
+function MenuCard({
+  item,
+  size,
+}: {
+  item: MenuItem;
+  size: number;
+}) {
+  const card = (
+    <View style={[styles.menuItem, { width: size, height: size }]}>
+      <MaterialCommunityIcons name={item.icon} size={32} color={Colors.primary} />
+      <Text style={styles.menuText}>{item.title}</Text>
+    </View>
+  );
+
+  if (item.externalUrl) {
+    return (
+      <TouchableOpacity activeOpacity={0.7} onPress={() => openExternalUrl(item.externalUrl!)}>
+        {card}
+      </TouchableOpacity>
+    );
+  }
+
+  return (
+    <Link href={item.href!} asChild>
+      <TouchableOpacity activeOpacity={0.7}>{card}</TouchableOpacity>
+    </Link>
+  );
+}
+
 export default function HomePage() {
+  const { width } = useWindowDimensions();
+  const itemSize = Math.floor((width - HORIZONTAL_PADDING * 2 - COLUMN_GAP) / 2);
+
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>JUMM</Text>
-        <Text style={styles.subtitle}>Oraciones y devociones</Text>
-
-        <View style={styles.grid}>
-          {menuItems.map((item) => {
-            const menuButton = (
-              <TouchableOpacity style={styles.menuItem}>
-                <MaterialCommunityIcons name={item.icon} size={32} color={Colors.primary} />
-                <Text style={styles.menuText}>{item.title}</Text>
-              </TouchableOpacity>
-            );
-
-            if (item.externalUrl) {
-              return (
-                <TouchableOpacity
-                  key={item.title}
-                  style={styles.menuItem}
-                  onPress={() => openExternalUrl(item.externalUrl!)}
-                >
-                  <MaterialCommunityIcons name={item.icon} size={32} color={Colors.primary} />
-                  <Text style={styles.menuText}>{item.title}</Text>
-                </TouchableOpacity>
-              );
-            }
-
-            return (
-              <Link key={item.href} href={item.href!} asChild>
-                {menuButton}
-              </Link>
-            );
-          })}
-        </View>
-      </ScrollView>
+      <FlatList
+        data={menuItems}
+        keyExtractor={(item) => item.title}
+        numColumns={2}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.content}
+        columnWrapperStyle={styles.columnWrapper}
+        ListHeaderComponent={
+          <View style={styles.header}>
+            <Text style={styles.title}>JUMM</Text>
+            <Text style={styles.subtitle}>Oraciones y devociones</Text>
+          </View>
+        }
+        renderItem={({ item }) => <MenuCard item={item} size={itemSize} />}
+      />
     </View>
   );
 }
@@ -161,8 +193,13 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   content: {
-    padding: 16,
-    paddingBottom: 32,
+    paddingHorizontal: HORIZONTAL_PADDING,
+    paddingTop: HORIZONTAL_PADDING,
+    paddingBottom: HORIZONTAL_PADDING,
+    flexGrow: 0,
+  },
+  header: {
+    marginBottom: 20,
   },
   title: {
     fontFamily: Fonts.bold,
@@ -177,22 +214,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: Colors.secondary,
     textAlign: 'center',
-    marginBottom: 20,
   },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  columnWrapper: {
     justifyContent: 'space-between',
+    marginBottom: ROW_GAP,
   },
   menuItem: {
-    width: '48%',
-    aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
     padding: 14,
     borderRadius: 6,
-    marginBottom: 12,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

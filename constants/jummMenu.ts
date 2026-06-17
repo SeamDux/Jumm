@@ -1,7 +1,11 @@
+export const GUIA_JUMM_PDF_URL =
+  'https://drive.google.com/file/d/1uBLE5kYMXIgkPTwEusb6xAi6m_rV18qI/view?usp=sharing';
+
 export type JummMenuItem = {
   id: string;
   title: string;
-  href: `/(app)/${string}`;
+  href?: `/(app)/${string}`;
+  externalUrl?: string;
 };
 
 export const jummMenu: JummMenuItem[] = [
@@ -13,6 +17,6 @@ export const jummMenu: JummMenuItem[] = [
   {
     id: 'guia',
     title: 'Guía del JUMM',
-    href: '/(app)/jumm/guia',
+    externalUrl: GUIA_JUMM_PDF_URL,
   },
 ];

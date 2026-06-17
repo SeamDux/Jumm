@@ -5,7 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
-import { useColorScheme, SafeAreaView, View, Text } from 'react-native';
+import { useColorScheme, View, Text } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Colors from '../constants/Colors';
 import { fontAssets } from '../constants/Fonts';
 
@@ -58,38 +59,40 @@ export default function RootLayout() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            animation: 'fade',
-            animationDuration: 200,
-          }}
-        >
-          <Stack.Screen 
-            name="(app)" 
-            options={{
+    <SafeAreaProvider>
+      <View style={{ flex: 1, backgroundColor: Colors.background }}>
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
+          <Stack
+            screenOptions={{
+              headerShown: false,
               animation: 'fade',
+              animationDuration: 200,
             }}
-          />
-          <Stack.Screen 
-            name="+not-found" 
-            options={{ 
-              title: 'Página no encontrada',
-              headerShown: true,
-              headerStyle: { 
-                backgroundColor: Colors.primary,
-              },
-              headerTintColor: Colors.white,
-              contentStyle: {
-                backgroundColor: Colors.background,
-              },
-            }} 
-          />
-        </Stack>
-      </ThemeProvider>
-    </SafeAreaView>
+          >
+            <Stack.Screen
+              name="(app)"
+              options={{
+                animation: 'fade',
+              }}
+            />
+            <Stack.Screen
+              name="+not-found"
+              options={{
+                title: 'Página no encontrada',
+                headerShown: true,
+                headerStyle: {
+                  backgroundColor: Colors.primary,
+                },
+                headerTintColor: Colors.white,
+                contentStyle: {
+                  backgroundColor: Colors.background,
+                },
+              }}
+            />
+          </Stack>
+        </ThemeProvider>
+      </View>
+    </SafeAreaProvider>
   );
 }
