@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
+import { Linking, StyleSheet, TouchableOpacity, ScrollView, View } from 'react-native';
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
@@ -6,17 +6,41 @@ import { Link } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { ComponentProps } from 'react';
 
+const REINADO_MARIA_REVISTAS_URL = 'https://reinadodemaria.org/categoria/revistas/';
+
 type MenuItem = {
   title: string;
-  href: `/(app)/${string}`;
   icon: ComponentProps<typeof MaterialCommunityIcons>['name'];
+  href?: `/(app)/${string}`;
+  externalUrl?: string;
 };
+
+async function openExternalUrl(url: string) {
+  try {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    }
+  } catch (error) {
+    console.error('Error opening URL:', error);
+  }
+}
 
 const menuItems: MenuItem[] = [
   {
     title: 'JUMM',
     href: '/(app)/jumm',
     icon: 'music-note',
+  },
+  {
+    title: 'YouTube',
+    href: '/(app)/youtube',
+    icon: 'youtube',
+  },
+  {
+    title: 'Reinado de María - Revistas',
+    externalUrl: REINADO_MARIA_REVISTAS_URL,
+    icon: 'crown',
   },
   {
     title: 'Oraciones de Siempre',
@@ -98,14 +122,33 @@ export default function HomePage() {
         <Text style={styles.subtitle}>Oraciones y devociones</Text>
 
         <View style={styles.grid}>
-          {menuItems.map((item) => (
-            <Link key={item.href} href={item.href} asChild>
+          {menuItems.map((item) => {
+            const menuButton = (
               <TouchableOpacity style={styles.menuItem}>
                 <MaterialCommunityIcons name={item.icon} size={32} color={Colors.primary} />
                 <Text style={styles.menuText}>{item.title}</Text>
               </TouchableOpacity>
-            </Link>
-          ))}
+            );
+
+            if (item.externalUrl) {
+              return (
+                <TouchableOpacity
+                  key={item.title}
+                  style={styles.menuItem}
+                  onPress={() => openExternalUrl(item.externalUrl!)}
+                >
+                  <MaterialCommunityIcons name={item.icon} size={32} color={Colors.primary} />
+                  <Text style={styles.menuText}>{item.title}</Text>
+                </TouchableOpacity>
+              );
+            }
+
+            return (
+              <Link key={item.href} href={item.href!} asChild>
+                {menuButton}
+              </Link>
+            );
+          })}
         </View>
       </ScrollView>
     </View>
