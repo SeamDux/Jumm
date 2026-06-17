@@ -14,19 +14,24 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
   {
-    title: 'Ofrecimiento de Obras',
-    href: '/(app)/ofrecimiento-obras',
-    icon: 'hand-heart',
+    title: 'JUMM',
+    href: '/(app)/jumm',
+    icon: 'music-note',
   },
   {
-    title: 'Ángelus',
-    href: '/(app)/angelus',
-    icon: 'bell-ring',
+    title: 'Oraciones de Siempre',
+    href: '/(app)/oraciones-siempre',
+    icon: 'book-alphabet',
   },
   {
-    title: 'Regina Caeli',
-    href: '/(app)/regina-caeli',
-    icon: 'flower-tulip',
+    title: 'Oraciones de la Noche',
+    href: '/(app)/oraciones-noche',
+    icon: 'weather-night',
+  },
+  {
+    title: 'Liturgia de las Horas del Día',
+    href: '/(app)/liturgia-horas-dia',
+    icon: 'clock-outline',
   },
   {
     title: 'De los alimentos',
@@ -34,9 +39,19 @@ const menuItems: MenuItem[] = [
     icon: 'silverware-fork-knife',
   },
   {
-    title: 'Preparación para la Santa Misa',
-    href: '/(app)/preparacion-santa-misa',
+    title: 'La Santa Misa',
+    href: '/(app)/santa-misa',
     icon: 'church',
+  },
+  {
+    title: 'Adoración al Santísimo',
+    href: '/(app)/adoracion-santisimo',
+    icon: 'candle',
+  },
+  {
+    title: 'Adoración al Santísimo en vivo',
+    href: '/(app)/adoracion-santisimo-en-vivo',
+    icon: 'video-wireless',
   },
   {
     title: 'Santo Rosario',
@@ -54,19 +69,9 @@ const menuItems: MenuItem[] = [
     icon: 'cross',
   },
   {
-    title: 'Novena a San José',
-    href: '/(app)/novena-san-jose',
-    icon: 'flower',
-  },
-  {
-    title: 'Novena a la Divina Misericordia',
-    href: '/(app)/novena-divina-misericordia',
-    icon: 'heart-pulse',
-  },
-  {
-    title: 'Novena a Nuestra Señora del encuentro con Dios',
-    href: '/(app)/novena-nuestra-senora-encuentro-dios',
-    icon: 'account-heart',
+    title: 'Novenas',
+    href: '/(app)/novenas',
+    icon: 'book-multiple',
   },
   {
     title: 'Sagrada Biblia',

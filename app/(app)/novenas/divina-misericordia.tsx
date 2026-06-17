@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import { Stack } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Colors from '../../constants/Colors';
-import Fonts from '../../constants/Fonts';
+import Colors from '../../../constants/Colors';
+import Fonts from '../../../constants/Fonts';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);

@@ -1,7 +1,7 @@
 import { StyleSheet, ScrollView, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
-import Colors from '../../constants/Colors';
-import Fonts from '../../constants/Fonts';
+import Colors from '../../../constants/Colors';
+import Fonts from '../../../constants/Fonts';
 
 type PrayerSectionProps = {
   title: string;

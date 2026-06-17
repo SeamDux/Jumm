@@ -1,33 +1,44 @@
 import { useState } from 'react';
 import { StyleSheet, ScrollView, Text, View, Pressable } from 'react-native';
 import { Stack } from 'expo-router';
-import Colors from '../../constants/Colors';
-import Fonts from '../../constants/Fonts';
+import Colors from '../../../constants/Colors';
+import Fonts from '../../../constants/Fonts';
 
 type Language = 'es' | 'la';
 
-type PrayerExchange = {
+type AngelusExchange = {
   v: string;
   r: string;
+  note?: string;
   bracketed?: boolean;
   repetition?: string;
 };
 
-const reginaCaeliEs: PrayerExchange[] = [
+const angelusEs: AngelusExchange[] = [
   {
-    v: 'Alégrate, Reina del cielo, ¡Aleluya!',
-    r: 'Porque el que mereciste llevar en tu seno, ¡Aleluya!',
+    v: 'El Ángel del Señor anunció a María,',
+    r: 'Y concibió por obra y gracia del Espíritu Santo.',
   },
   {
-    v: 'Ha resucitado según predijo, ¡Aleluya!',
-    r: 'Ruega por nosotros a Dios, ¡Aleluya!',
+    v: 'Dios te salve, María, llena eres de gracia, el Señor es contigo, bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.',
+    r: 'Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.',
   },
   {
-    v: 'Gózate y alégrate, Virgen María, ¡Aleluya!',
-    r: 'Porque ha resucitado Dios verdaderamente, ¡Aleluya!',
+    v: 'He aquí la esclava del Señor,',
+    r: 'Hágase en mí según tu palabra.',
+    note: 'Avemaría.',
   },
   {
-    v: 'Oremos. Oh Dios que por la resurrección de tu Hijo, nuestro Señor Jesucristo, te has dignado dar la alegría al mundo, concédenos que por su Madre, la Virgen María, alcancemos el gozo de la vida eterna. Por el mismo Jesucristo nuestro Señor.',
+    v: 'Y el Verbo se hizo carne,',
+    r: 'Y habitó entre nosotros.',
+    note: 'Avemaría.',
+  },
+  {
+    v: 'Ruega por nosotros santa Madre de Dios,',
+    r: 'Para que seamos dignos de alcanzar las promesas de nuestro Señor Jesucristo.',
+  },
+  {
+    v: 'Oremos. Te suplicamos, Señor, que derrames tu gracia sobre nuestras almas, para que, habiendo conocido por el anuncio del Ángel la Encarnación de tu Hijo Jesucristo, por los méritos de su Pasión y Cruz, seamos llevados a la gloria de la Resurrección. Por el mismo Jesucristo nuestro Señor.',
     r: 'Amén.',
   },
   {
@@ -42,21 +53,31 @@ const reginaCaeliEs: PrayerExchange[] = [
   },
 ];
 
-const reginaCaeliLa: PrayerExchange[] = [
+const angelusLa: AngelusExchange[] = [
   {
-    v: 'Regina cæli, lætáre, Alleluia!',
-    r: 'Quia quem meruísti portare, Alleluia!',
+    v: 'Ángelus Dómini nuntiávit Maríæ,',
+    r: 'Et concépit de Spíritu Sancto.',
   },
   {
-    v: 'Resurréxit, sicut díxit, Alleluia!',
-    r: 'Ora pro nobis Deum, Alleluia!',
+    v: 'Ave María, gratia plena, Dóminus tecum, benedícta tu in muliéribus, et benedíctus fructus ventris tui, Iesus.',
+    r: 'Sancta María, Mater Dei, ora pro nobis, peccatóribus, nunc et in hora mortis nostræ. Amen.',
   },
   {
-    v: 'Gaude et lætáre, Virgo María, Alleluia!',
-    r: 'Quia surréxit Dóminus vere, Alleluia!',
+    v: 'Ecce ancílla Dómini,',
+    r: 'Fiat mihi secúndum verbum tuum.',
+    note: 'Ave María.',
   },
   {
-    v: 'Orémus. Deus, qui per resurrectionem Fílii tui, Dómini nostri Iesu Christi, mundum lætificáre dignátus es, præsta quæsumus ut, per eius Genitrícem Virginem Maríam, perpétuæ capiámus gaudia vitæ. Per eúndem Christum Dóminum nostrum.',
+    v: 'Et Verbum caro factum est,',
+    r: 'Et habitávit in nobis.',
+    note: 'Ave María.',
+  },
+  {
+    v: 'Ora pro nobis sancta Dei Genitrix,',
+    r: 'Ut digni efficiámur promissiónibus Christi.',
+  },
+  {
+    v: 'Orémus. Gratiam tuam, quæsumus, Domine, méntibus nostris infúnde: ut qui Angelo nuntiánte, Christi Fílii tui Incarnatiónem cognóvimus, per Passiónem eius et Crucem, ad resurrectiónis gloriam perducamur. Per eúndem Christum Dominum nostrum.',
     r: 'Amen.',
   },
   {
@@ -97,7 +118,7 @@ function VersicleLine({
   );
 }
 
-function PrayerExchangeBlock({ exchange }: { exchange: PrayerExchange }) {
+function AngelusExchangeBlock({ exchange }: { exchange: AngelusExchange }) {
   if (exchange.bracketed) {
     return (
       <View style={styles.exchange}>
@@ -116,6 +137,7 @@ function PrayerExchangeBlock({ exchange }: { exchange: PrayerExchange }) {
     <View style={styles.exchange}>
       <VersicleLine label="V" text={exchange.v} />
       <VersicleLine label="R" text={exchange.r} />
+      {exchange.note ? <Text style={styles.note}>{exchange.note}</Text> : null}
     </View>
   );
 }
@@ -149,20 +171,20 @@ function LanguageSwitch({
   );
 }
 
-export default function ReginaCaeliScreen() {
+export default function AngelusScreen() {
   const [language, setLanguage] = useState<Language>('es');
-  const exchanges = language === 'es' ? reginaCaeliEs : reginaCaeliLa;
+  const exchanges = language === 'es' ? angelusEs : angelusLa;
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Regina Caeli' }} />
+      <Stack.Screen options={{ title: 'Ángelus' }} />
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        <Text style={styles.mainTitle}>REGINA CÆLI</Text>
+        <Text style={styles.mainTitle}>ÁNGELUS</Text>
 
         <LanguageSwitch language={language} onChange={setLanguage} />
 
         {exchanges.map((exchange, index) => (
-          <PrayerExchangeBlock key={`${language}-${index}`} exchange={exchange} />
+          <AngelusExchangeBlock key={`${language}-${index}`} exchange={exchange} />
         ))}
       </ScrollView>
     </>
@@ -233,6 +255,13 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.regular,
     fontSize: 16,
     color: '#000000',
+  },
+  note: {
+    fontFamily: Fonts.regular,
+    fontSize: 16,
+    color: '#000000',
+    textAlign: 'left',
+    marginTop: 4,
   },
   repetitionInline: {
     fontFamily: Fonts.italic,

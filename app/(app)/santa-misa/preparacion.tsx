@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import { Stack } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Colors from '../../constants/Colors';
-import Fonts from '../../constants/Fonts';
+import Colors from '../../../constants/Colors';
+import Fonts from '../../../constants/Fonts';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -120,7 +120,7 @@ function CollapsiblePrayer({
   );
 }
 
-export default function PreparacionSantaMisaScreen() {
+export default function PreparacionPage() {
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
 
   const toggleSection = (id: string) => {
@@ -133,7 +133,7 @@ export default function PreparacionSantaMisaScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Preparación para la Santa Misa' }} />
+      <Stack.Screen options={{ title: 'Preparación' }} />
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         <Text style={styles.mainTitle}>PREPARACIÓN PARA LA SANTA MISA</Text>
 
@@ -163,7 +163,6 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontFamily: Fonts.bold,
     fontSize: 22,
-    fontWeight: '700',
     color: Colors.liturgicalRed,
     textAlign: 'center',
     marginBottom: 24,
@@ -200,7 +199,6 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: Fonts.bold,
     fontSize: 15,
-    fontWeight: '700',
     color: Colors.liturgicalRed,
     marginRight: 12,
     lineHeight: 22,
