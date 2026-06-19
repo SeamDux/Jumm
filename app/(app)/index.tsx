@@ -17,6 +17,7 @@ const REINADO_MARIA_REVISTAS_URL = 'https://reinadodemaria.org/categoria/revista
 const ADORACION_EN_VIVO_URL = 'https://www.youtube.com/live/mnOTH_3dprI';
 const AUDIOLIBROS_JUMM_URL =
   'https://drive.google.com/drive/folders/1c5qsFLI9DjKNf231ca5nuDigXbUYj0jh?usp=sharing';
+const EVANGELIO_DEL_DIA_URL = 'https://www.vaticannews.va/es/evangelio-de-hoy.html';
 
 const HORIZONTAL_PADDING = 16;
 const COLUMN_GAP = 12;
@@ -123,7 +124,7 @@ const menuItems: MenuItem[] = [
   },
   {
     title: 'Evangelio del día',
-    href: '/(app)/evangelio-del-dia',
+    externalUrl: EVANGELIO_DEL_DIA_URL,
     icon: 'book-open-variant',
   },
   {
@@ -178,7 +179,7 @@ export default function HomePage() {
         ListHeaderComponent={
           <View style={styles.header}>
             <Text style={styles.title}>JUMM</Text>
-            <Text style={styles.subtitle}>Oraciones y devociones</Text>
+            <Text style={styles.subtitle}>Jóvenes Unidos Mariano Misionero</Text>
           </View>
         }
         renderItem={({ item }) => <MenuCard item={item} size={itemSize} />}
