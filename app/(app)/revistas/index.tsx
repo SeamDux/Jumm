@@ -1,36 +1,36 @@
-import { Linking, StyleSheet, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, StyleSheet, ScrollView, TouchableOpacity, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
 import Colors from '../../../constants/Colors';
 import Fonts from '../../../constants/Fonts';
-import { youtubeChannels } from '../../../constants/youtubeChannels';
+import { revistasMenu } from '../../../constants/revistasMenu';
 
-async function openYoutubeChannel(url: string) {
+async function openExternalUrl(url: string) {
   try {
     const supported = await Linking.canOpenURL(url);
     if (supported) {
       await Linking.openURL(url);
     }
   } catch (error) {
-    console.error('Error opening YouTube channel:', error);
+    console.error('Error opening URL:', error);
   }
 }
 
-export default function YoutubeScreen() {
+export default function RevistasScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: 'YouTube' }} />
+      <Stack.Screen options={{ title: 'Revistas' }} />
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        <Text style={styles.mainTitle}>YOUTUBE</Text>
-        <Text style={styles.subtitle}>Playlists en YouTube</Text>
+        <Text style={styles.mainTitle}>REVISTAS</Text>
+        <Text style={styles.subtitle}>Elige la colección que deseas consultar</Text>
 
         <View style={styles.list}>
-          {youtubeChannels.map((channel) => (
+          {revistasMenu.map((item) => (
             <TouchableOpacity
-              key={channel.id}
+              key={item.id}
               style={styles.item}
-              onPress={() => openYoutubeChannel(channel.url)}
+              onPress={() => openExternalUrl(item.externalUrl)}
             >
-              <Text style={styles.itemTitle}>{channel.title}</Text>
+              <Text style={styles.itemTitle}>{item.title}</Text>
             </TouchableOpacity>
           ))}
         </View>

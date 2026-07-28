@@ -21,7 +21,6 @@ export const oracionesSiempreMenu: OracionSiempreMenuItem[] = [
   { id: 'gloria', title: 'Gloria', href: '/(app)/oraciones-siempre/gloria' },
   { id: 'credo', title: 'Credo', href: '/(app)/oraciones-siempre/credo' },
   { id: 'angelus', title: 'Ángelus', href: '/(app)/oraciones-siempre/angelus' },
-  { id: 'yo-confieso', title: 'Yo Confieso', href: '/(app)/oraciones-siempre/yo-confieso' },
   {
     id: 'oracion-papa',
     title: 'Oración por el Papa',
@@ -41,10 +40,5 @@ export const oracionesSiempreMenu: OracionSiempreMenuItem[] = [
     id: 'vocaciones-religiosas',
     title: 'Oración por las Vocaciones Religiosas',
     href: '/(app)/oraciones-siempre/vocaciones-religiosas',
-  },
-  {
-    id: 'oracion-lluvia',
-    title: 'Oración por la Lluvia',
-    href: '/(app)/oraciones-siempre/oracion-lluvia',
   },
 ];

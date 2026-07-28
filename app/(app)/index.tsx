@@ -13,11 +13,7 @@ import { Link } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { ComponentProps } from 'react';
 
-const REINADO_MARIA_REVISTAS_URL = 'https://reinadodemaria.org/categoria/revistas/';
 const ADORACION_EN_VIVO_URL = 'https://www.youtube.com/live/mnOTH_3dprI';
-const AUDIOLIBROS_JUMM_URL =
-  'https://drive.google.com/drive/folders/1c5qsFLI9DjKNf231ca5nuDigXbUYj0jh?usp=sharing';
-const EVANGELIO_DEL_DIA_URL = 'https://www.vaticannews.va/es/evangelio-de-hoy.html';
 
 const HORIZONTAL_PADDING = 16;
 const COLUMN_GAP = 12;
@@ -48,8 +44,13 @@ const menuItems: MenuItem[] = [
     icon: 'music-note',
   },
   {
+    title: 'P. Molina',
+    href: '/(app)/p-molina',
+    icon: 'account-tie',
+  },
+  {
     title: 'Audiolibros JUMM',
-    externalUrl: AUDIOLIBROS_JUMM_URL,
+    href: '/(app)/audiolibros',
     icon: 'headphones',
   },
   {
@@ -58,9 +59,9 @@ const menuItems: MenuItem[] = [
     icon: 'youtube',
   },
   {
-    title: 'Reinado de María - Revistas',
-    externalUrl: REINADO_MARIA_REVISTAS_URL,
-    icon: 'crown',
+    title: 'Revistas',
+    href: '/(app)/revistas',
+    icon: 'newspaper-variant',
   },
   {
     title: 'Oraciones de Siempre',
@@ -121,11 +122,6 @@ const menuItems: MenuItem[] = [
     title: 'Sagrada Biblia',
     href: '/(app)/sagrada-biblia',
     icon: 'book-open-page-variant',
-  },
-  {
-    title: 'Evangelio del día',
-    externalUrl: EVANGELIO_DEL_DIA_URL,
-    icon: 'book-open-variant',
   },
   {
     title: 'La Doctrina Cristiana',

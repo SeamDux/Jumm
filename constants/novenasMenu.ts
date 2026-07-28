@@ -25,4 +25,14 @@ export const novenasMenu: NovenaMenuItem[] = [
     title: 'Novena al Espíritu Santo',
     href: '/(app)/novenas/espiritu-santo',
   },
+  {
+    id: 'jesucristo-rey',
+    title: 'Novena a Jesucristo Rey',
+    href: '/(app)/novenas/jesucristo-rey',
+  },
+  {
+    id: 'inmaculada-concepcion',
+    title: 'Novena a la Inmaculada Concepción',
+    href: '/(app)/novenas/inmaculada-concepcion',
+  },
 ];

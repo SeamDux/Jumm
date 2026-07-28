@@ -354,6 +354,164 @@ function CollapsibleSection({
   );
 }
 
+type PrimerSabadoMystery = {
+  title: string;
+  scripture: string;
+  meditation: string[];
+  canto: string;
+};
+
+const primerSabadoMysteries: PrimerSabadoMystery[] = [
+  {
+    title: 'La Encarnación del Hijo de Dios',
+    scripture:
+      'El Ángel anunció a María y le dijo: «No temas, María, porque has hallado gracia delante de Dios; vas a concebir en el seno y vas a dar a luz un Hijo, a quien pondrás por nombre Jesús». Dijo María: «He aquí la esclava del Señor; hágase en mí según tu palabra». Y el Ángel dejándola se fue. (Lc 1, 26-38)',
+    meditation: [
+      'El Ángel le anuncia a la Virgen que será la Madre de Dios. La Virgen, por ser la Inmaculada Concepción y la Llena de Gracia, dice «sí» a la voluntad del Padre, y recibe, por obra del Espíritu Santo, al Verbo de Dios, que se encarna en sus entrañas purísimas. De esta manera, la Virgen es nuestro modelo ideal y perfectísimo para recibir la Comunión eucarística, porque así como la Virgen creyó con su mente purísima la verdad de la Encarnación anunciada por el Ángel, así nosotros debemos creer, sin adherirnos a doctrinas extrañas ni a supersticiones, en el dogma de la presencia real de nuestro Señor Jesucristo en la Eucaristía, por la transubstanciación, producida en la santa Misa, en el momento de la consagración del pan y del vino, de manera tal que después de la consagración, ya no hay más pan ni vino, sino la substancia del Cuerpo, la Sangre, el Alma y la Divinidad de nuestro Señor Jesucristo. También, así como la Virgen se adhirió con todo su Corazón Inmaculado a su Hijo, que se encarnaba en sus entrañas, sin amar a nada ni a nadie que no fuera su Hijo Dios, también así nosotros, al comulgar, debemos tener un corazón puro, que ame a Jesús en la Eucaristía y a solo Él; y si ama a las creaturas, que sean en Él y por Él, y para Él, y nada que no sea por Él y para Él. También la Virgen lo recibió con su cuerpo purísimo, porque no hubo intervención de varón en la Concepción de Jesús; de la misma manera, nuestro cuerpo debe estar purificado por la penitencia, pero sobre todo, por la confesión sacramental, para recibir a Jesús Sacramentado, a imitación de María. Inmaculada Concepción, te pedimos que nos ayudes a que siempre te imitemos, para que recibamos a tu Hijo Jesús en la Eucaristía, con una mente, un corazón y un cuerpo puros, a imitación tuya, por la gracia santificante.',
+    ],
+    canto:
+      'Bajado del cielo\nun Ángel llegó\ny anunció a María\nser Madre de Dios.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'La Visitación de Nuestra Señora a su prima santa Isabel',
+    scripture:
+      'En aquellos días, se levantó María y se fue con prontitud a la región montañosa, a una ciudad de Judá; entró en casa de Zacarías y saludó a Isabel. Y sucedió que, en cuanto oyó Isabel el saludo de María, saltó de gozo el niño en su seno, e Isabel quedó llena de Espíritu Santo. (Lc 1, 39-46)',
+    meditation: [
+      'La Virgen, encinta por obra y gracia del Espíritu Santo, emprende un largo y peligroso viaje para socorrer a su prima, santa Isabel, encinta también ella. La visita de la Virgen causa alegría y gozo en Isabel y el Bautista, quien salta de gozo en el vientre de su madre, y el motivo de la alegría de ambos, es que con la visita de la Virgen llega Jesucristo, Dios encarnado, el Redentor. Con su visita, la Virgen nos enseña dos cosas: a obrar la misericordia con los más necesitados, y que su presencia maternal va siempre acompañada de la presencia de su Hijo Jesucristo, Dios, nuestro Señor. Visitemos a los enfermos de nuestra parroquia, sobre todo a aquellos que pertenecieron a las instituciones parroquiales, y hoy se encuentran solos y abandonados, y visitémoslos con el amor y la alegría de la Virgen y de Jesús.',
+    ],
+    canto:
+      'Visita a su prima\nla Madre de Dios;\nal hijo la Madre\nla gracia llevó.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'El Nacimiento del Hijo de Dios en el portal de Belén',
+    scripture:
+      'El Ángel les dijo a los pastores: «Les traigo una buena noticia, una gran alegría para todo el pueblo: Hoy, en la ciudad de David, les ha nacido un Salvador, que es el Mesías, el Señor. Y esto les servirá de señal: Encontrarán a un Niño recién nacido envuelto en pañales y acostado en un pesebre». Y junto con el Ángel, apareció de pronto una multitud del ejército celestial, que alababa a Dios, diciendo: «¡Gloria a Dios en las alturas, y en la tierra, paz a los hombres amados por Él». Después que los Ángeles volvieron al cielo, los pastores se decían unos a otros: «Vayamos a Belén, y veamos lo que ha sucedido y que el Señor nos ha anunciado». Fueron rápidamente y encontraron a María, a José, y al recién nacido acostado en el pesebre. (Lc 2, 11-16)',
+    meditation: [
+      'Jesús nace en un humilde portal de Belén. El Dios de majestad infinita; el Dios al que los cielos eternos no pueden contener; porque tanta es su grandeza, el Dios ante el cual los Ángeles postran sus frentes en adoración; ese Dios, nace como un niño humano, en una gruta excavada en la roca, utilizada como refugio para animales, en una noche fría y estrellada. Luego de nacer virginalmente, atravesando el abdomen superior de María Virgen, así como el rayo del sol atraviesa el cristal y lo deja intacto, antes, durante y después de atravesarlo, un Ángel lo recibe y se lo da a María, quien lo arropa con pañales, lo cubre con su manto, lo acuna entre sus brazos, colmándolo de amor maternal y lo amamanta. El Dios de majestad infinita, el Creador del universo visible e invisible, ha nacido como un niño más, indefenso, aterido, temblando por el frío, llorando de hambre, necesitado del amor de una madre, y del abrazo materno, que calme el desamparo que experimenta el bebé al pasar de la seguridad del vientre materno al mundo exterior. La Virgen obra la misericordia con su Niño Jesús, que está desamparado y desvalido, alimentándolo, abrigándolo, cuidándolo, y así nos da ejemplo para que nosotros obremos la misericordia para con nuestros prójimos más necesitados. Pidámosle, en este misterio, a la Virgen Inmaculada, que, a imitación suya, sepamos obrar la misericordia, para que así «atesoremos tesoros en el cielo», de manera tal que, en el día de nuestra muerte, recibamos misericordia de parte del Dios de infinita misericordia. Amén.',
+    ],
+    canto:
+      'En pobre pesebre\nestá el Niño Dios\nhelado de frío\ny ardiendo de amor.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'La Presentación del Niño Jesús en el templo y la Purificación de su Santísima Madre',
+    scripture:
+      'Cuando se cumplieron los días de la purificación de ellos, según la ley de Moisés, llevaron a Jesús a Jerusalén para presentarlo al Señor, como está escrito en la ley del Señor. (Lc 2, 22-40)',
+    meditation: [
+      'A los pocos días de nacer, la Virgen y san José llevan al Niño Dios al templo para el rito de la presentación, rito mediante el cual se consagraban los primogénitos a Dios. En nuestros días, el ateísmo de la sociedad materialista ha invadido a numerosos fieles, de manera tal que han perdido la noción del misterio sacramental y de la gracia santificante contenida en los sacramentos, y es así como se piensa que los sacramentos –principalmente, Bautismo, Primera Comunión, Confirmación, Matrimonio–, son meros eventos sociales, y no eventos salvíficos, en los cuales se hace presente Jesucristo con su sacrificio redentor, para donarnos la salvación. Los sacramentos, lejos de ser meros eventos sociales, utilizados para «aparentar» y «aparecer» con un barniz de cristiandad a los ojos de los hombres, pero conservando un corazón y costumbres paganos, son los «canales de la gracia», por donde se actualiza y vehiculiza el sacrificio redentor de Jesucristo; gracia que actuando en la raíz más profunda del ser metafísico del hombre, le concede la participación en la vida divina trinitaria y lo convierte en hijo adoptivo de Dios. Pidámosle en este misterio a la Virgen, morir al hombre viejo, el hombre dominado por las pasiones, por la superstición, por el error, por la concupiscencia, y nacer al hombre nuevo, y que sea Ella, la Inmaculada Concepción, quien nos presente, como niños recién nacidos, entre sus brazos, a su Hijo Jesús, Dios nuestro Señor.',
+    ],
+    canto:
+      'Presenta en el templo\nla Madre a su Amor;\nespada cruenta\nle hirió el Corazón.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'El Niño Jesús perdido y hallado en el templo',
+    scripture:
+      'Cuando Jesús cumplió los doce años, subieron todos a la fiesta, según la costumbre; al volverse, pasados aquellos días, el Niño Jesús se quedó en Jerusalén, sin saberlo sus padres. Creyendo ellos que estaría en la caravana, hicieron un día de camino. Luego se pusieron a buscarlo entre los parientes y conocidos; pero al no encontrarlo, se volvieron a Jerusalén en su busca. Y sucedió que, al cabo de tres días, lo encontraron en el templo, sentado en medio de los maestros, escuchándoles y preguntándoles. (Lc 2, 41-51)',
+    meditation: [
+      'Nuestro Señor, que tiene doce años, se queda en el templo, respondiendo las preguntas de los doctores y maestros de la ley. Mientras tanto, la Virgen y san José emprenden el regreso a su hogar, de forma separada, pensando cada uno que Jesús está con el otro. Luego de tres días, se percatan de que no es así, por lo que regresan apresuradamente a Jerusalén, pensando que Jesús se ha perdido. La realidad es que Jesús no se ha perdido en ningún momento, sino que ha permanecido siempre, en todo momento, en el templo. Muchas veces nos sucede lo mismo: Caminamos en dirección contraria al templo, en donde está Jesús, y lo perdemos de vista, y pensamos que Jesús nos ha abandonado; muchas veces, somos nosotros los que nos encaminamos hacia donde no está Jesús, y por eso creemos que Jesús nos ha dejado. Perdemos de vista a Jesús, pero porque vamos en dirección contraria adonde Jesús está: Jesús está en el templo; más concretamente, está en el Sagrario; más concretamente, está en la Eucaristía. No dirijamos nuestros pasos en dirección contraria al templo; no dirijamos nuestros pasos en dirección contraria al Sagrario; no dirijamos nuestros pasos en dirección contraria a la Eucaristía; dirijamos nuestros pasos hacia donde está Jesús: Jesús está en el templo parroquial; Jesús está en el Sagrario de la parroquia; Jesús está en la Eucaristía. Junto a María, que en Jerusalén se encuentra con su Hijo Jesús en el templo, vayamos también nosotros al templo parroquial, al Sagrario, a la Eucaristía, y hagamos Adoración Eucarística: Adoremos a nuestro Dios en la Eucaristía, que ha bajado del cielo para derramar su Amor inagotable e incontenible en nuestros corazones, en los corazones de todos aquellos que se acerquen a Él en la Eucaristía, con fe, con amor, y con un corazón contrito y humillado. María, Inmaculada Concepción, tú que encontraste a tu Hijo en el templo, llévanos de la mano al templo, al Sagrario, a la adoración eucarística, infúndenos tu mismo amor por la Eucaristía, para que amando a tu Hijo en la Eucaristía, en el tiempo que nos queda por vivir en esta vida terrena, lo continuemos amando por toda la eternidad, por los siglos de los siglos, en el Reino de los Cielos. Amén.',
+    ],
+    canto:
+      'Perdido en el templo\nel Niño quedó.\nSus padres lo buscan\ncon sumo dolor.\nAve, Ave, Ave María...',
+  },
+];
+
+const primerSabadoSerieIIMysteries: PrimerSabadoMystery[] = [
+  {
+    title: 'La Encarnación del Hijo de Dios',
+    scripture:
+      'Y el Ángel le dijo: «No temas María, porque has hallado gracia delante de Dios; concebirás en tu seno y darás a luz un Hijo y le pondrás por nombre Jesús». Dijo entonces María: «He aquí la esclava del Señor; hágase en mí según tu palabra». (Lc 1, 30-31, 38)',
+    meditation: [
+      '¡Oh Madre, Madre! Con esa palabra fiat, nos has hecho hermanos de Dios y herederos de su gloria. ¡Bendita seas! (San Josemaría Escrivá)',
+      'En el seno de María Santísima había para Jesús amor, pureza, adoración, compañía, respeto, cuidado... Y cuando sale del sagrario y viene a mi miserable pecho, nada de eso halla. (Santa María Micaela)',
+    ],
+    canto:
+      'Bajado del cielo\nun Ángel llegó\ny anunció a María\nser Madre de Dios.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'La Visitación de Nuestra Señora a su prima santa Isabel',
+    scripture:
+      'Y en cuanto oyó el saludo de María, el niño saltó de gozo en su seno e Isabel quedó llena del Espíritu Santo; y exclamando en voz alta dijo: «¡Bendita tú entre las mujeres y bendito el fruto de tu vientre! ¿De dónde a mí tanto bien, que venga la Madre de mi Señor a visitarme?» (Lc 1, 41-43)',
+    meditation: [
+      'Únete a la escena de la visitación. Canta con María su Magnificat de acción de gracias. Da saltos de júbilo con el niño profeta y adora rendido el gran misterio de la Encarnación del Verbo. (San Buenaventura)',
+      'Ya que os disteis tanta prisa en visitar y santificar la casa de Isabel, visitad la casa de mi alma. Mejor que yo sabéis lo pobre que es y cuán enferma se halla de tantos males. (San Alfonso María de Ligorio)',
+    ],
+    canto:
+      'Visita a su prima\nla Madre de Dios;\nal hijo la Madre\nla gracia llevó.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'El nacimiento del Hijo de Dios en el portal de Belén',
+    scripture:
+      'Y sucedió que estando en Belén le llegó la hora del parto, y dio a luz a su Hijo primogénito; lo envolvió en pañales y lo recostó en un pesebre, porque no había lugar para ellos en la posada. (Lc 2, 6-7)',
+    meditation: [
+      '¡Oh María!, la más dichosa de las madres y la más pura de las vírgenes, prestadme vuestro Corazón amante para amar a este divino Niño, que adoro en vuestros brazos y a quien quiero asemejarme a toda costa. (San Juan Eudes)',
+      'El Niño Jesús viene a este mundo en tu busca. Ofrécete desde ahora como su pequeña oveja. No quieras otro pastor.',
+    ],
+    canto:
+      'En pobre pesebre\nestá el Niño Dios\nhelado de frío\ny ardiendo de amor.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'La Presentación del Niño Jesús en el templo y la Purificación de su Santísima Madre',
+    scripture:
+      'Y cumplidos los días de la purificación, llevaron a Jesús a Jerusalén para presentarlo al Señor y para presentar como ofrenda un par de tórtolas o dos pichones, según lo mandado por la ley del Señor. (Lc 2, 22-24)',
+    meditation: [
+      'María lleva en sus brazos a un tierno Niño, flor y fruto de su pureza virginal, para ofrecerlo al Señor como víctima de sacrificio. Y es que ese hijo de María es también el Hijo del Altísimo que debe ser inmolado para la redención de nuestros pecados. (San Juan Eudes)',
+      'Ofrezcámonos también nosotros a Dios en rendido homenaje a su Divina Majestad. Mas hagámoslo por medio de Jesucristo y Este en brazos de su Madre, como el día de la Presentación.',
+    ],
+    canto:
+      'Presenta en el templo\nla Madre a su Amor;\nespada cruenta\nle hirió el Corazón.\nAve, Ave, Ave María...',
+  },
+  {
+    title: 'El Niño Jesús perdido y hallado en el templo',
+    scripture:
+      'Cuando tuvo doce años, subieron a la fiesta, como era costumbre. Pasados aquellos días, al regresar, el Niño Jesús se quedó en Jerusalén, sin que lo advirtiesen sus padres; y ocurrió que, al cabo de tres días, lo encontraron en el templo, sentado en medio de los doctores, escuchándolos y preguntándoles. (Lc 2, 42-43, 46)',
+    meditation: [
+      'El Señor envía o permite a veces abandonos y oscuridades, tedios y cansancios que lo ocultan a las miradas del alma para mantenernos en humildad, hacernos adquirir méritos, consolidar nuestra virtud, formarnos en la paciencia y conformidad con la Voluntad Divina; o para que lo busquemos con afán. (San Juan Eudes)',
+      'Aunque uno posea todos los bienes del mundo, si ha perdido a Dios, todas las cosas de la tierra se le han convertido en humo y vanidad. (San Alfonso María de Ligorio)',
+    ],
+    canto:
+      'Perdido en el templo\nel Niño quedó.\nSus padres lo buscan\ncon sumo dolor.\nAve, Ave, Ave María...',
+  },
+];
+
+function PrimerSabadoMysteryItem({
+  index,
+  mystery,
+}: {
+  index: number;
+  mystery: PrimerSabadoMystery;
+}) {
+  return (
+    <View style={styles.mysteryItem}>
+      <Text style={styles.mysteryTitle}>
+        {index + 1}. {mystery.title}
+      </Text>
+      <Text style={styles.mysteryText}>{mystery.scripture}</Text>
+
+      <Text style={styles.primerSabadoHeading}>Meditación</Text>
+      {mystery.meditation.map((paragraph, paragraphIndex) => (
+        <Text
+          key={paragraphIndex}
+          style={[styles.mysteryText, paragraphIndex > 0 && styles.meditationParagraphSpacing]}
+        >
+          {paragraph}
+        </Text>
+      ))}
+
+      <Text style={styles.primerSabadoHeading}>Canto Mariano</Text>
+      <Text style={styles.cantoText}>{mystery.canto}</Text>
+    </View>
+  );
+}
+
+function PrimerSabadoContent({ mysteries }: { mysteries: PrimerSabadoMystery[] }) {
+  return (
+    <View>
+      {mysteries.map((mystery, index) => (
+        <PrimerSabadoMysteryItem key={index} index={index} mystery={mystery} />
+      ))}
+    </View>
+  );
+}
+
 function LetaniasLauretanasContent() {
   return (
     <View>
@@ -515,6 +673,25 @@ export default function SantoRosarioScreen() {
         ))}
 
         <CollapsibleSection
+          id="primer-sabado"
+          title="PRIMER SÁBADO DE MES"
+          expanded={!!expandedIds['primer-sabado']}
+          onToggle={() => toggleSection('primer-sabado')}
+        >
+          <PrimerSabadoContent mysteries={primerSabadoMysteries} />
+        </CollapsibleSection>
+
+        <CollapsibleSection
+          id="primer-sabado-serie-ii"
+          title="PRIMER SÁBADO DE MES"
+          subtitle="Serie II: De varios Santos"
+          expanded={!!expandedIds['primer-sabado-serie-ii']}
+          onToggle={() => toggleSection('primer-sabado-serie-ii')}
+        >
+          <PrimerSabadoContent mysteries={primerSabadoSerieIIMysteries} />
+        </CollapsibleSection>
+
+        <CollapsibleSection
           id="letanias"
           title="5. LETANÍAS LAURETANAS"
           expanded={!!expandedIds.letanias}
@@ -636,6 +813,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000000',
     textAlign: 'left',
+    lineHeight: 26,
+  },
+  primerSabadoHeading: {
+    fontFamily: Fonts.italic,
+    fontSize: 16,
+    fontStyle: 'italic',
+    color: Colors.liturgicalRed,
+    marginTop: 14,
+    marginBottom: 8,
+  },
+  meditationParagraphSpacing: {
+    marginTop: 12,
+  },
+  cantoText: {
+    fontFamily: Fonts.regular,
+    fontSize: 16,
+    color: '#000000',
+    textAlign: 'center',
     lineHeight: 26,
   },
   instruction: {

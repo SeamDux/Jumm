@@ -2,7 +2,7 @@ import { Linking, StyleSheet, ScrollView, TouchableOpacity, Text, View } from 'r
 import { Stack, Link } from 'expo-router';
 import Colors from '../../../constants/Colors';
 import Fonts from '../../../constants/Fonts';
-import { jummMenu } from '../../../constants/jummMenu';
+import { pMolinaMenu } from '../../../constants/pMolinaMenu';
 
 async function openExternalUrl(url: string) {
   try {
@@ -15,36 +15,40 @@ async function openExternalUrl(url: string) {
   }
 }
 
-export default function JummScreen() {
+export default function PMolinaScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: 'JUMM' }} />
+      <Stack.Screen options={{ title: 'P. Molina' }} />
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        <Text style={styles.mainTitle}>JUMM</Text>
-        <Text style={styles.subtitle}>Himno, guía y uniformes de la comunidad</Text>
+        <Text style={styles.mainTitle}>P. MOLINA</Text>
+        <Text style={styles.subtitle}>Himno y recursos del P. Molina</Text>
 
         <View style={styles.list}>
-          {jummMenu.map((item) => {
-            if (item.externalUrl) {
-              return (
-                <TouchableOpacity
-                  key={item.id}
-                  style={styles.item}
-                  onPress={() => openExternalUrl(item.externalUrl!)}
-                >
-                  <Text style={styles.itemTitle}>{item.title}</Text>
-                </TouchableOpacity>
-              );
-            }
+          {pMolinaMenu.length === 0 ? (
+            <Text style={styles.emptyText}>Próximamente se agregará contenido aquí.</Text>
+          ) : (
+            pMolinaMenu.map((item) => {
+              if (item.externalUrl) {
+                return (
+                  <TouchableOpacity
+                    key={item.id}
+                    style={styles.item}
+                    onPress={() => openExternalUrl(item.externalUrl!)}
+                  >
+                    <Text style={styles.itemTitle}>{item.title}</Text>
+                  </TouchableOpacity>
+                );
+              }
 
-            return (
-              <Link key={item.id} href={item.href!} asChild>
-                <TouchableOpacity style={styles.item}>
-                  <Text style={styles.itemTitle}>{item.title}</Text>
-                </TouchableOpacity>
-              </Link>
-            );
-          })}
+              return (
+                <Link key={item.id} href={item.href!} asChild>
+                  <TouchableOpacity style={styles.item}>
+                    <Text style={styles.itemTitle}>{item.title}</Text>
+                  </TouchableOpacity>
+                </Link>
+              );
+            })
+          )}
         </View>
       </ScrollView>
     </>
@@ -94,5 +98,12 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: Colors.primary,
     textAlign: 'center',
+  },
+  emptyText: {
+    fontFamily: Fonts.regular,
+    fontSize: 15,
+    color: Colors.secondary,
+    textAlign: 'center',
+    lineHeight: 22,
   },
 });
