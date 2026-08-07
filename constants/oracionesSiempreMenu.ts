@@ -41,4 +41,9 @@ export const oracionesSiempreMenu: OracionSiempreMenuItem[] = [
     title: 'Oración por las Vocaciones Religiosas',
     href: '/(app)/oraciones-siempre/vocaciones-religiosas',
   },
+  {
+    id: 'oraciones-noche',
+    title: 'Oraciones de la Noche',
+    href: '/(app)/oraciones-noche',
+  },
 ];

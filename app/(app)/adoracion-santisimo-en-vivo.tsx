@@ -4,8 +4,8 @@ import { Stack } from 'expo-router';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
 
-const YOUTUBE_LIVE_URL = 'https://www.youtube.com/live/mnOTH_3dprI';
-const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/mnOTH_3dprI';
+const YOUTUBE_LIVE_URL = 'https://www.youtube.com/watch?v=ikZ8s-Qejfo';
+const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/ikZ8s-Qejfo';
 
 async function openYoutubeLive() {
   try {

@@ -13,8 +13,6 @@ import { Link } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { ComponentProps } from 'react';
 
-const ADORACION_EN_VIVO_URL = 'https://www.youtube.com/live/mnOTH_3dprI';
-
 const HORIZONTAL_PADDING = 16;
 const COLUMN_GAP = 12;
 const ROW_GAP = 12;
@@ -69,11 +67,6 @@ const menuItems: MenuItem[] = [
     icon: 'book-alphabet',
   },
   {
-    title: 'Oraciones de la Noche',
-    href: '/(app)/oraciones-noche',
-    icon: 'weather-night',
-  },
-  {
     title: 'Liturgia de las Horas del Día',
     href: '/(app)/liturgia-horas-dia',
     icon: 'clock-outline',
@@ -92,11 +85,6 @@ const menuItems: MenuItem[] = [
     title: 'Adoración al Santísimo',
     href: '/(app)/adoracion-santisimo',
     icon: 'candle',
-  },
-  {
-    title: 'Adoración al Santísimo en vivo',
-    externalUrl: ADORACION_EN_VIVO_URL,
-    icon: 'video-wireless',
   },
   {
     title: 'Santo Rosario',

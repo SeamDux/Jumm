@@ -1,10 +1,18 @@
+export const ADORACION_EN_VIVO_URL = 'https://www.youtube.com/watch?v=ikZ8s-Qejfo';
+
 export type AdoracionSantisimoMenuItem = {
   id: string;
   title: string;
-  href: `/(app)/${string}`;
+  href?: `/(app)/${string}`;
+  externalUrl?: string;
 };
 
 export const adoracionSantisimoMenu: AdoracionSantisimoMenuItem[] = [
+  {
+    id: 'en-vivo',
+    title: 'Adoración al Santísimo en vivo',
+    externalUrl: ADORACION_EN_VIVO_URL,
+  },
   {
     id: 'quince-minutos',
     title: 'Quince minutos en compañía de Jesús Sacramentado',

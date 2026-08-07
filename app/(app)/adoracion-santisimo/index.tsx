@@ -1,8 +1,19 @@
-import { StyleSheet, ScrollView, TouchableOpacity, Text, View } from 'react-native';
+import { Linking, StyleSheet, ScrollView, TouchableOpacity, Text, View } from 'react-native';
 import { Stack, Link } from 'expo-router';
 import Colors from '../../../constants/Colors';
 import Fonts from '../../../constants/Fonts';
 import { adoracionSantisimoMenu } from '../../../constants/adoracionSantisimoMenu';
+
+async function openExternalUrl(url: string) {
+  try {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    }
+  } catch (error) {
+    console.error('Error opening URL:', error);
+  }
+}
 
 export default function AdoracionSantisimoScreen() {
   return (
@@ -13,13 +24,27 @@ export default function AdoracionSantisimoScreen() {
         <Text style={styles.subtitle}>Exposición y Bendición con el Santísimo Sacramento</Text>
 
         <View style={styles.list}>
-          {adoracionSantisimoMenu.map((item) => (
-            <Link key={item.id} href={item.href} asChild>
-              <TouchableOpacity style={styles.item}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
-              </TouchableOpacity>
-            </Link>
-          ))}
+          {adoracionSantisimoMenu.map((item) => {
+            if (item.externalUrl) {
+              return (
+                <TouchableOpacity
+                  key={item.id}
+                  style={styles.item}
+                  onPress={() => openExternalUrl(item.externalUrl!)}
+                >
+                  <Text style={styles.itemTitle}>{item.title}</Text>
+                </TouchableOpacity>
+              );
+            }
+
+            return (
+              <Link key={item.id} href={item.href!} asChild>
+                <TouchableOpacity style={styles.item}>
+                  <Text style={styles.itemTitle}>{item.title}</Text>
+                </TouchableOpacity>
+              </Link>
+            );
+          })}
         </View>
       </ScrollView>
     </>
